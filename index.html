@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Common Uses of jQuery</title>
+
+  <!-- Local jQuery File -->
+  <script src="jquery.js"></script>
+
+  <!-- CDN fallback if local fails -->
+  <scrpit>
+    if (typeof jQuery == 'undefined') {
+    document.write('script src="https://code.jquery.com/jquery-3.6.0.min.js"><\/script>');
+      }
+    </script>
+
+    <!-- jQuery Validation Plugin -->
+    <script src="https://cdn.jsdeliver.net/jquery.validation/1.19.5/jquery.validate.min.js"></script>
+
+     <script>
+    $(document).ready(function(){
+
+      // Change paragrah text color
+      $("p").css("color, blue");
+
+      // Form validation
+      $("#contactForm").validate({
+        rules:{
+          name:"required",
+          email:{
+            required:true,
+            email:true
+          },
+          message:"required"
+        },
+        messages:{
+          name:"PLease enter your name",
+          email:"Please enter a vaild email",
+          message: "Please enter a message"
+        }
+      });
+
+    });
+</script>
+
+    </head>
+
+    <body>
+
+    <h1>Common Uses of jQuery</h1>
+
+    <p>
+    jQuery is a JavaScript library that simplifies HTML document traversal,
+    event handling, animations, and Ajax interactions. Developers commonly,
+    use jQuery to manipulate the DOM, handle form validation, create
+    interactive web elements, and improve user experience while writing 
+    less code compared to stantard JavaScript.
+    </p>
+
+    <!-- Anchor link-->
+    <a href="https://jqueryvalidation.org/">Visit the jQuery Validation Plugin</a>
+
+    <h2>Contact Form</h2>
+
+    <form id="contactForm">
+
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message"></textarea><br><br>
+
+    <input type="submit" value="Submit">
+
+    </form>
+
+    </body>
+
+    </html>
+      
